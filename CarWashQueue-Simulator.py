@@ -6,29 +6,29 @@ class Washer:
     """
     def __init__(self, wash_time):
         """Sets up a Washer instance. Make sure you know what the instance attributes should be!"""
-        # YOUR CODE HERE
+      
         self.wash_time = wash_time
         self.time_until_done = 0
 
     def is_busy(self):
         """Return True if the washer is currently washing (so no car can
         exit the queue yet) and False if not (the next car can be dequeued)."""
-        # YOUR CODE HERE
+        
         if self.time_until_done!= 0:
             return True 
         else:
             return False
-        #raise NotImplementedError()
+        
 
     def start_washing(self): 
         """Tell the washer to wash the car at the front of the
         queue by updating its attributes appropriately."""
-        # YOUR CODE HERE
+       
         self.time_until_done = self.wash_time 
 
     def one_second(self):
         """Update the washer's attributes to reflect the passage of one second."""
-        # YOUR CODE HERE
+        
         if self.is_busy() == True:
             self.time_until_done = self.time_until_done - 1
 
@@ -60,7 +60,6 @@ class ArrivalGenerator:
         """The ArrivalGenerator has one job: return True with probability `prob`.
         To do that, it needs to save the value of `prob`.
         """
-        # YOUR CODE HERE
 
         self.probability = prob 
 
@@ -69,7 +68,7 @@ class ArrivalGenerator:
         you might use the `random` module's functions
         to do it. If you want a hint, please ask, I don't want you to get hung up on the
         math of probability too much."""
-        # YOUR CODE HERE
+        
         self.cars = random.random()
         if self.cars <= self.probability:
             return True
@@ -103,27 +102,21 @@ class AverageTracker:
     def next_value(self, val):
         """This method adds `val` to the total received so far and increments
         the number of values received."""
-        # YOUR CODE HERE
-
-        #self.sum_ =sum(self.w_time)
-        #return self.count
+        
     
         self.count += 1
         #print(self.count)
         self.sum_ +=val
         #print(self.sum_)
-        
-    
-
 
     def average(self):
         """Return the average of all the values so far."""
-        # YOUR CODE HERE
+        
 
         return self.sum_ /self.count
     def number_of_values(self):
         """Return the number of values received so far."""
-        # YOUR CODE HERE
+        
         return self.count
     
 a = AverageTracker()
@@ -157,7 +150,7 @@ prob = 0.004
 simulation_time = 6000
 wash_time = 150
 
-# YOUR CODE HERE
+
 
 def simulation (prob, simulation_time, wash_time):
     queue_wash = deque()
@@ -195,7 +188,7 @@ def ten_thousand_runs():
     Return the lists like this:
     return counts, averages
     """
-    # YOUR CODE HERE
+    
     counts = []
     averages = []
     for _ in range(10000):
